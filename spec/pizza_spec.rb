@@ -23,4 +23,19 @@ describe Topping do
 
     expect(topping.vegetarian).to eq(true)
   end
+
+  describe Pizza do
+    describe '.initialize' do
+      it 'records all of the toppings' do
+        toppings = [
+          Topping.new('mushrooms', vegetarian: true),
+          Topping.new('pepperoni')
+
+        ]
+        pizza = Pizza.new(toppings)
+
+        expect(pizza.toppings).to eq(toppings)
+      end
+    end
+  end
 end
